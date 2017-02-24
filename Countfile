@@ -1,0 +1,52 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Countfile {
+public static void main(String[] args) throws IOException{
+    
+  
+    Long[] array = new Long[30000];
+    File file = new File("/Users/sadiahasan/Documents/workspace/countfile/count.txt");
+    
+    Scanner scanner = new Scanner(file);
+    int i = 0;
+   
+    while(scanner.hasNextLine()){
+      array[i++] = scanner.nextLong();
+      scanner.nextLine();
+    }
+        
+   File f;
+  
+   f = new File("/Users/sadiahasan/Desktop/files4.txt");
+   if(!f.exists()){
+       f.createNewFile();   
+       System.out.println("create new file");
+       
+       FileWriter fW = new FileWriter(f);
+       BufferedWriter bW = new BufferedWriter(fW);
+       int x = 0;
+       while(array[x]!=null){
+           bW.write(Long.toString(array[x++]));
+           bW.write("\n");
+           System.out.println("done iA");
+           
+       }
+       
+       
+   }
+   
+}
+
+
+    
+}
+    
+    
+    
+    
+
+
